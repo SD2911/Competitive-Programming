@@ -51,8 +51,14 @@ int main()
    cout << res << endl;
 }
 
-
-
+(❁´◡`❁) a function to find the max element of a floating point array:
+float f(float arr[],int n){
+    float mx = arr[0];
+    for(int i=0;i<n;i++){
+          if(arr[i]>mx){
+              mx = arr[i];
+     }
+     }
 
 
 
