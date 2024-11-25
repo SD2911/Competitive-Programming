@@ -60,8 +60,28 @@ float f(float arr[],int n){
      }
      }
 
+🌚call by value :
+💜void function:
+  void f(int a){
+      a+=5;
+     cout<<a<<endl;
+   return;
+  }
+int main(){
+   int a = 10;
+   f(a);
+ }
 
-
+🌚call by reference:
+void f(int *a){
+      *a+=5;
+     cout<<*a<<endl;
+   return;
+  }                      
+int main(){
+   int a = 10;
+   f(&a);
+ }
 
 
 
