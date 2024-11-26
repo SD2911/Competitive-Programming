@@ -1,1 +1,93 @@
+🌚built in function : max(),sqrt().....
+
+🌚user defined function :
+ return_type function_name(parameter){
+       //process
+     return                    //input parameter e thakbe
+}
+
+(❁´◡`❁) a function to add two integer:
+   int sum(int x,int y){
+        int c = x + y;
+      return c;
+}
+//function call:
+int main(){
+    int res = sum(3,6);
+   cout<<res<<endl;
+  return 0;
+}
+
+(❁´◡`❁) a function to return the sum of an integer and a floating number.
+float sum(int a,float b){
+    float c = a + b;
+  return c;
+}
+int main(){
+   float res = sum(2,4.5);
+   cout<<res<<endl;
+}
+
+(❁´◡`❁) a function that takes an int array as input ,and returns the sum of its elements.
+#include <bits/stdc++.h>
+using namespace std;
+int f(int B[], int n){
+    int res = 0;
+    for(int i=0;i<n;i++){
+        res+=B[i];
+    }
+    return res;
+}
+
+int main()
+{  
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i=0; i<n; i++){
+        cin >> arr[i];
+    }
+   int res = f(arr,n);
+   cout << res << endl;
+}
+
+(❁´◡`❁) a function to find the max element of a floating point array:
+float f(float arr[],int n){
+    float mx = arr[0];
+    for(int i=0;i<n;i++){
+          if(arr[i]>mx){
+              mx = arr[i];
+     }
+     }
+
+🌚call by value :
+💜void function:
+  void f(int a){
+      a+=5;
+     cout<<a<<endl;
+   return;
+  }
+int main(){
+   int a = 10;
+   f(a);
+ }
+
+🌚call by reference:
+void f(int *a){
+      *a+=5;
+     cout<<*a<<endl;
+   return;
+  }                      
+int main(){
+   int a = 10;
+   f(&a);
+ }
+
+
+
+
+
+
+
+
 
