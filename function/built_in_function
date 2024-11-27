@@ -30,19 +30,59 @@ for(int i=0; i<7; i++){
    cout<<endl;
  }
 
+🌚max_element:
+int ara[5] = {3,1,2,5,4};
+cout << *max_element(ara, ara+5) << endl;      //5
+
+🌚min_element:
+int ara[5] = {3,1,2,5,4};
+cout << *min_element(ara, ara+5) << endl;      //1
 
 
+🌚__gcd(greatest common divider):
+cout << __gcd(24,16) << endl;           //8
 
 
+🌚__lcm:
+int lcm(int a, int b) {
+      return (a * b) / __gcd(a,b);
+    }
+int main(){
+    int n;
+   cin >> n;
+   cout << lcm(16, 24) << endl;
+   return 0;
+   }
 
 
+🌚isupper and isupper:
+char c = 'A';
+cout << islower(c) << endl;          //a
+
+char s = 'z';
+cout << isupper(s) << endl;           //Z
 
 
+🌚sqrt():
+double x = 25;
+cout << sqrt(x) << endl;        //5
 
 
+🌚cbrt():
+double x = 27;
+cout << cbrt(x) << endl;         //3
 
 
+🌚toupper and tolower:
+char c = 'b';
+cout << (char)toupper(c) << endl;            //B
+cout << (char)tolower(c) << endl;           //b
 
+
+🌚strcpy:
+char str1[30] = "hello world", str2[7] = "myworld";
+strcpy(str1 + 6, str2);
+cout << str1 << endl;               //hello myworld
 
 
 
