@@ -1,1 +1,10 @@
+vector<int> vec;          0
+vec.push_back(5);         5             //O(1)
+vec.push_back(6);         5 6
 
+reverse(vec.begin(),vec.end());
+sort(vec.begin(),vec.end());
+
+vec = {6,7,23,4,3};
+vec.pop_back();
+now, vec={6,7,23,4};
