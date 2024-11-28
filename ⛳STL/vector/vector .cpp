@@ -39,3 +39,21 @@ int main() {
   cout << "Size of the vector after clearing the vector: " << v.size();
 
 }
+
+💜OUTPUT:
+the elements in the vector: 0 1 2 3 4 5 6 7 8 9
+The front element of the vector: 0
+The last element of the vector: 9
+The size of the vector: 10
+Deleting element from the end: 9
+Printing the vector after removing the last element:
+0 1 2 3 4 5 6 7 8
+Inserting 5 at the beginning:
+The first element is: 5
+Erasing the first element
+Now the first element is: 0
+
+vector is not empty
+Size of the vector after clearing the vector: 0
+
+
