@@ -8,3 +8,4 @@ sort(vec.begin(),vec.end());
 vec = {6,7,23,4,3};
 vec.pop_back();
 now, vec={6,7,23,4};
+https://takeuforward.org/c/vector-in-c-stl/
