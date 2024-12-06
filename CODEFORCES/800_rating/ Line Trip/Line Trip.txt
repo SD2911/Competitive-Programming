@@ -1,1 +1,12 @@
+Finding the Maximum Gap:
+prev is initialized to 0, representing the starting position (point 0 on the number line).
+ans keeps track of the maximum gap found so far.
 
+The program loops through the array a:
+It calculates the gap between the current position (a[i]) and the previous position(prev).
+It updates ans to be the maximum of its current value and the newly calculated gap.
+Updates prev to the current position (a[i]).
+
+Handling the Last Segment:
+After the loop, the program calculates the gap between the last position in a and the endpoint k.
+This gap is doubled (2 * (k - prev)) because the journey needs to return back to the start.
