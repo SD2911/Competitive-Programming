@@ -1,5 +1,7 @@
 If the array is already sorted or k>1
-then there is always a way (reverse of size 2=swap consecutive elements). Else it is not possible since when k=1 the array remains the same.
+then there is always a way (reverse of size 2=swap consecutive elements).
+Else it is not possible since when k=1 the array remains the same.
 
 
-In C++, is_sorted() is a built-in function used to check whether the element of the given range is sorted or not in ascending order.
+In C++, is_sorted() is a built-in function used to check whether
+the element of the given range is sorted or not in ascending order.
