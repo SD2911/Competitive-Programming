@@ -1,0 +1,11 @@
+If the current cell is empty (.):
+Increment cnt (count of consecutive empty cells).
+Increment ans (place water in this cell using action 1).
+
+
+If the current cell is blocked (#):
+Reset cnt to 0 (consecutive streak ends).
+
+
+If cnt >= 3 (more than 3 consecutive empty cells are encountered):
+Stop the loop early since the propagation rules ensure that action 2 can take over.
