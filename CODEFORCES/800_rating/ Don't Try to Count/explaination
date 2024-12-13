@@ -1,1 +1,17 @@
 
+Initialize:
+cnt = 6: A safety limit on the number of operations to prevent infinite loops, as the problem guarantees n * m ≤ 25.
+f = 0: A flag to track if s is found as a substring in x.
+res = 0: The number of operations performed.
+
+The loop runs up to 6 times (cnt--):
+x.find(s): Checks if s exists as a substring in x.
+If found, set f = 1 and break the loop.
+
+If not found:
+Increment res (count the operation).
+Append x to itself (x += x) to extend the string.
+
+After the loop:
+If f == 1 (substring s was found), output res (number of operations performed).
+Otherwise, output -1 (indicating s cannot be made a substring).
