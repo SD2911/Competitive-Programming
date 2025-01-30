@@ -72,7 +72,29 @@ int main(){
     
     //string in vector
     vector<string> v;
-      
+
+    
+    #count number of character of similar character in string.
+    string s = "abcaacdef";
+    vector<int> v(26, 0);
+    for(char c: s){
+        v[c-'a']++;
+    }
+    for(int i=0; i<26; i++){
+          cout<<(char) ('a'+i) << " -> " << v[i] << endl;
+    }
+
+
+   #string anagram
+    string s1 = "subrata";
+    string s2 = "atarbus";
+
+    sort(s1.begin(),s1.end());
+    sort(s2.begin(),s2.end());
+
+    if(s1==s2) cout<<"ANAGRAM"<<endl;
+    else cout<<"NOT ANAGRAM"<<endl;
+    
       
         
       return 0;
