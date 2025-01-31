@@ -64,11 +64,12 @@ int main(){
        string s;
        getline(cin,s);
    unordered_set<char> letters;    
-       
+// The unordered_set automatically ensures that each character appears only once.       
      for(char c: s){
-          if(isalpha(c)) letters.insert(tolower(c));
+          if(isalpha(c)) letters.insert(tolower(c));   
        }
-       
+  //The isalpha(c) function checks if the character is a letter (either uppercase or lowercase).     
+    //The tolower(c) function converts any uppercase letter to lowercase.
        if(letters.size()==26) cout<<"pangram"<<endl;
        else cout<<"not pangram"<<endl;
         
