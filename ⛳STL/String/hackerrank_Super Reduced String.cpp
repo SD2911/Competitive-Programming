@@ -36,29 +36,17 @@ int main(){
     fast
        string s;
        cin >> s;
-      
-      //check if the num is exactly 8.
-      if(s.length()!=8) {
-          cout<<"No"<<endl;
-          return 0;
-      }
+    string result;
+    for(char c : s)
     
-    // Check if the middle part is a valid 6-digit number
-      if(!isupper(s[0]) || !isupper(s[7])){
-          cout<<"No"<<endl;
-          return 0;
-      }
+    if(!result.empty() && result.back()==c) result.pop_back();
+    else  result.push_back(c);
+    
+    if(result.empty()) cout<<"Empty String"<<endl;
+    else cout<<result<<endl;
       
-      // Convert the extracted part to an integer and check the range
-      //The stoi function in C++ is used to convert a std::string to an int
-      int num = stoi(s.substr(1,6));
-      if(num<100000 || num>999999){
-          cout<<"No"<<endl;
-          return 0;
-      }
-      
-      cout<<"Yes"<<endl;
-       
        
       return 0;
     }
+
+  
