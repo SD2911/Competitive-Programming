@@ -1,0 +1,27 @@
+1.insert():	adds an element (key-value pair) to the map
+2.erase():	removes an element or range of elements from the map
+3.clear():	removes all the elements from the map
+4.find():	searches the map for the given key
+5.size():	returns the number of elements in the map
+6.empty():	returns true if the map is empty
+
+
+#add value in map:
+// create a map with integer keys and string values;
+map<int, string> student;
+// add element with key 1 and value "Jacqueline"
+student[1] = "Jacqueline";
+// add element with key 2 and value "Blake"
+student[2] = "Blake";
+
+we can also use insert():
+// using the [] operator
+map_name[key] = value;
+
+// using the insert() and make_pair() functions
+map_name.insert(std::make_pair(key, value));
+
+
+
+
+
