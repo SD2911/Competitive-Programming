@@ -49,7 +49,7 @@ int main(){
                 }
             }
        
-      
+      sort(v.begin(),v.end());
        int sz = (v.begin(),v.end())-v.begin();
        
        cout<<sz<<endl;
