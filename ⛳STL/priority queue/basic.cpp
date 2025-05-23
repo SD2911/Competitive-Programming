@@ -15,3 +15,10 @@ priority_queue<int> p;
      cout<<endl;  // 4 3 2 1
      
      cout<<p.size()<<endl;   //0
+
+
+
+
+
+
+
