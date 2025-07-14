@@ -58,41 +58,63 @@ If we follow the path
 
 
 
-
+// bruteforce aproach :
 #include <bits/stdc++.h>
 using namespace std;
-int n,h[100005],vis[100005],dp[100005];
+const int N = 1e5+10;
+int h[N];
 
-
-int solve(int ind)
-  { 
-     if(ind==n) return 0;
-     if(vis[ind]) return dp[ind];
-     int res = INT_MAX;
-     // i~i+1 
-     int cost = abs(h[ind]-h[ind+1]);
-     int now = cost + solve(ind+1);
-     res = min(res,now);
-     
-     if(ind+2<=n){
-     // i~i+2
-      cost = abs(h[ind]-h[ind+2]);
-     now = cost + solve(ind+2);
-     res = min(res,now);
-     }
-     vis[ind] = 1;
-     dp[ind] = res;
-      return res;
-  }
+// TOP DOWN approach
+int func(int i){
+    if(i==0) return 0;
+    int cost = INT_MAX;
+// way 1:
+   cost = min(cost,func(i-1)+abs(h[i]-h[i-1]));
+// way 2:
+if(i>1)
+   cost = min(cost,func(i-2)+abs(h[i]-h[i-2]));
+   
+   return cost;
+}
 
 int main(){
-   // fast
-      //test{
-              cin >> n;
-        for(int i=0; i<=n; i++) cin >> h[i];
-        int ans = solve(1);
-        cout<<ans<<endl;
-       // }
+     //memset(dp,-1,sizeof(dp));
+        int n;
+        cin >> n;
+        for(int i=0; i<n; i++) cin >> h[i];
+       cout<<func(n-1)<<endl;
+       
       return 0;
     }
 
+
+//dp approach :
+#include <bits/stdc++.h>
+using namespace std;
+const int N = 1e5+10;
+int h[N];
+int dp[N];
+
+// TOP DOWN approach
+int func(int i){
+    if(i==0) return 0;
+    if(dp[i]!=-1) return dp[i];
+    int cost = INT_MAX;
+// way 1:
+   cost = min(cost,func(i-1)+abs(h[i]-h[i-1]));
+// way 2:
+if(i>1)
+   cost = min(cost,func(i-2)+abs(h[i]-h[i-2]));
+   
+   return dp[i]=cost;
+}
+
+int main(){
+     memset(dp,-1,sizeof(dp));
+        int n;
+        cin >> n;
+        for(int i=0; i<n; i++) cin >> h[i];
+       cout<<func(n-1)<<endl;
+       
+      return 0;
+    }
