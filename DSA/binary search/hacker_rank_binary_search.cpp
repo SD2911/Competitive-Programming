@@ -1,3 +1,25 @@
+You need to find index (0-based) of a given key in a sorted array. Use only Binary Search.
+
+Input Format
+
+The first line contains N.Next line contains N integers of the array.
+The next line contains the key to be searched. If element is not found print -1.
+
+Constraints
+N<=1000000
+
+Output Format
+
+Single Interger index or -1.
+
+Inputcopy	Outputcopy
+5 1 2 3 4 5 4
+3
+Explanation
+
+Element 4 is present at 3rd index.
+
+
 #include <bits/stdc++.h>
 #define test int t; cin >> t; while(t--)
 #define fast {ios_base::sync_with_stdio(0);cin.tie(0);}
@@ -38,3 +60,4 @@ int main(){
        // }
       return 0;
     }
+
