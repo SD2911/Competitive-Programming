@@ -162,6 +162,70 @@ int main() {
 
 
 
+⛳ First and Last Occurrences in Array :
+Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+If target is not found in the array, return [-1, -1].
+You must write an algorithm with O(log n) runtime complexity.
+Example 1:
+Input: nums = [5,7,7,8,8,10], target = 8
+Output: [3,4]
+Example 2:
+Input: nums = [5,7,7,8,8,10], target = 6
+Output: [-1,-1]
+
+solution :
+class Solution {
+public:
+    vector<int> searchRange(vector<int>& nums, int target) {
+       int l = lower_bound(nums.begin(),nums.end(),target)-nums.begin();
+    int r = upper_bound(nums.begin(),nums.end(),target)-nums.begin();   
+      if(l==r) return {-1,-1};
+      else return {l,r-1};
+    }
+};
+
+
+⛳ Count Occurrences in a Sorted Array
+
+The total number of occurrences  = (last index - first index + 1) and return this length as the answer.
+
+
+⛳ Search in Rotated Sorted Array :    
+There is an integer array nums sorted in ascending order (with distinct values).
+Prior to being passed to your function, nums is possibly left rotated at an unknown index k (1 <= k < nums.length) 
+    such that the resulting array is [nums[k], nums[k+1], ..., nums[n-1], nums[0], nums[1], ..., nums[k-1]] (0-indexed). 
+    For example, [0,1,2,4,5,6,7] might be left rotated by 3 indices and become [4,5,6,7,0,1,2].
+Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, 
+or -1 if it is not in nums.
+You must write an algorithm with O(log n) runtime complexity.    
+
+    solution : 
+    class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int n = nums.size();
+         int low = 0, high = n - 1;
+         while(low<=high){
+            int mid = (low+high)/2;
+            if(nums[mid]==target) return mid;
+            if(nums[low]<=nums[mid]){
+                if(nums[low]<=target && target < nums[mid]) high = mid-1;
+                else low = mid + 1;
+            }
+            else {
+                if(nums[mid]<target && target<=nums[high]) low = mid + 1;
+                else high = mid - 1;
+            }
+         }
+           return -1;
+    }
+};
+
+time complexity : O(log N)
+space complexity : O(1)
+
+
+
 
 
 
