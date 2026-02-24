@@ -225,8 +225,101 @@ time complexity : O(log N)
 space complexity : O(1)
 
 
+⛳ Search in Rotated Sorted Array-2 :
+   this time array may contain duplicate value.
+   
+ class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int n = nums.size();
+         int low = 0, high = n - 1;
+         while(low<=high){
+            int mid = (low+high)/2;
+            if(nums[mid]==target) return mid;
+             if(nums[low]==nums[mid]&&nums[mid]==nums[high]){
+                 low++;
+                 high--;
+                 continue;
+             }
+            if(nums[low]<=nums[mid]){
+                if(nums[low]<=target && target < nums[mid]) high = mid-1;
+                else low = mid + 1;
+            }
+            else {
+                if(nums[mid]<target && target<=nums[high]) low = mid + 1;
+                else high = mid - 1;
+            }
+         }
+           return -1;
+    }
+};
+
+time complexity : O(log N)
+space complexity : O(1)
+
+
+
+⛳Find minimum in Rotated Sorted Array  :
+
+Problem Statement:
+Given an integer array arr of size N, sorted in ascending order (with distinct values),
+the array is rotated at any index which is unknown. Find the minimum element in the array.
+
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int n = nums.size();
+             int low = 0, high = n-1;
+             while(low<high){
+                 int mid = (low+high)/2;
+                 if(nums[mid]>nums[high]) low=mid+1;
+                 else high=mid;
+             }
+             return nums[low];
+    }
+};    
+
+
+⛳Find out how many times the array is rotated  :
+Given an integer array arr of size N, sorted in ascending order (with distinct values). Now the array is rotated
+between 1 to N times which is unknown. Find how many times the array has been rotated.
+
+    solution :    index of the minimum number
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int n = nums.size();
+             int low = 0, high = n-1;
+             while(low<high){
+                 int mid = (low+high)/2;
+                 if(nums[mid]>nums[high]) low=mid+1;
+                 else high=mid;
+             }
+             return nums[low];
+    }
+};    
 
 
 
 
+⛳Single element in a Sorted Array:
+Given an array of N integers. Every number in the array except one appears twice. Find the single number in the array.
+class Solution {
+public:
+    int singleNonDuplicate(vector<int>& nums) {
+        int n = nums.size();
+        if(n==1) return nums[0];
+        if(nums[0]!=nums[1]) return nums[0];
+        if(nums[n-1]!=nums[n-2]) return nums[n-1];
+        int low = 1, high = n-2;
+        while(low<=high){
+            int mid = (low+high)/2;
+            if(nums[mid]!=nums[mid+1]&&nums[mid]!=nums[mid-1]) return nums[mid];
+      // left half
+      if((mid%2==1&&nums[mid]==nums[mid-1])||(mid%2==0&&nums[mid]==nums[mid+1]) ) low = mid+1;
+      else high = mid -1;     
+        }
+        return -1;
+    }
+};
 
