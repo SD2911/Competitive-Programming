@@ -37,7 +37,7 @@ Given two numbers N and M, find the Nth root of M. The nth root of a number M is
      int nthRoot(int n, int m){
                  int low = 1, high = m;
                  while(low<=high){
-                     int mid = (low+high)/2;
+                     int mid = (low+high)/2; 
                      ll ans = 1;
                      for(int i=0; i<n; i++){
                          ans *= mid;
@@ -52,4 +52,5 @@ Given two numbers N and M, find the Nth root of M. The nth root of a number M is
            return -1;
      
         }
+
 
